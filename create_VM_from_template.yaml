@@ -6,8 +6,8 @@
   tasks:
   - name: Clone the template
     vmware_guest:
-      hostname: 192.168.0.51:447
-      username: administrator@vsphere.local
+      hostname: 192.168.0.13
+      username: root
       password: Macinka@123
       validate_certs: False
       name: testvm_1
