@@ -1,0 +1,18 @@
+---
+- name: Create a VM from a template
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Clone the template
+    vmware_guest:
+      hostname: 192.168.0.51
+      username: administrator@vsphere.local
+      password: Macinka@123
+      validate_certs: False
+      name: testvm_1
+      template: debian11
+      datacenter: DC1
+      folder: /NEW-PMI-BUILD
+      state: poweredon
+      wait_for_ip_address: no
