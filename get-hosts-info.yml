@@ -1,0 +1,25 @@
+- hosts: localhost
+  vars:
+    - vcenter_hostname: 192.168.0.51
+    - vcenter_username: administrator@vsphere.local
+    - vcenter_password: Macinka@123
+    
+  tasks:
+    - name: Gather hosts info using Community.VMware collection
+      community.vmware.vmware_cluster_info:
+        hostname: '{{ vcenter_hostname }}'
+        username: '{{ vcenter_username }}'
+        password: '{{ vcenter_password }}'
+        validate_certs: no
+        cluster_name: Bo-LAB
+      register: cluster_info
+
+    - name: Print hosts info
+      debug:
+          var: cluster_info
+          
+          
+          
+          
+          
+          
