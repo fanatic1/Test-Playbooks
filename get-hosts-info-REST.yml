@@ -8,7 +8,7 @@
   tasks:
     - name: Login to the vCenter instance
       uri:
-        url: "https://192.168.0.51:447/api/session"
+        url: "https://192.168.0.51/api/session"
         force_basic_auth: yes
         method: POST
         user: "{{ vcenter_username }}"
@@ -19,7 +19,7 @@
 
     - name: Gather hosts info using REST API
       uri:
-        url: "https://192.168.0.51:447/api/vcenter/host"
+        url: "https://192.168.0.51/api/vcenter/host"
         force_basic_auth: yes
         method: GET
         validate_certs: no
